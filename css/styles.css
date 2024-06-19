@@ -1,29 +1,43 @@
 body {
-    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 20px;
+    background-color: #f8e8ca;
+    color: #333;
   }
   
   table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #f2f0e9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   th, td {
-    border: 1px solid #071E4A;
-    padding: 8px;
+    border: 1px solid #ddd;
+    padding: 12px;
     text-align: left;
   }
   
   th {
-    background-color: #7BAFD4;
+    background-color: #071e4a;
+    color: #fff;
   }
   
-  .interactive {
-    background-color: #E1E9DE;
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
   }
   
   .instructions {
     margin-bottom: 20px;
     font-size: 1.2em;
+    background-color: #071e4a;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
   }
   
