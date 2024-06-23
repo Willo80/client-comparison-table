@@ -29,6 +29,7 @@
       <th class="interactive">Segment</th>
       <th class="interactive">9-Box Grid</th>
     </tr>
+    </tr>
     <tr>
       <td>Professor GreenThumb</td>
       <td>Comprehensive and innovative gardening solutions</td>
@@ -48,6 +49,52 @@
         </ul>
       </td>
       <td>Develop advanced sustainable projects, publish research</td>
+      <td>
+        <select id="budget-profG">
+          <option value="0">Select</option>
+          <option value="1">1 ($0-$10,000)</option>
+          <option value="2">2 ($10,001-$20,000)</option>
+          <option value="3">3 ($20,001-$30,000)</option>
+          <option value="4">4 ($30,001+)</option>
+        </select>
+      </td>
+      <td>
+        <select id="engagement-profG">
+          <option value="0">Select</option>
+          <option value="1">1 (Low)</option>
+          <option value="2">2 (Medium)</option>
+          <option value="3">3 (High)</option>
+          <option value="4">4 (Very High)</option>
+        </select>
+      </td>
+      <td>
+        <select id="history-profG">
+          <option value="0">Select</option>
+          <option value="1">1 (Minor projects)</option>
+          <option value="2">2 (Moderate projects)</option>
+          <option value="3">3 (Major projects)</option>
+          <option value="4">4 (Significant strategic projects)</option>
+        </select>
+      </td>
+      <td>
+        <select id="growth-profG">
+          <option value="0">Select</option>
+          <option value="1">1 (Low)</option>
+          <option value="2">2 (Medium)</option>
+          <option value="3">3 (High)</option>
+          <option value="4">4 (Very High)</option>
+        </select>
+      </td>
+      <td>
+        <select id="alignment-profG">
+          <option value="0">Select</option>
+          <option value="1">1 (Low)</option>
+          <option value="2">2 (Medium)</option>
+          <option value="3">3 (High)</option>
+          <option value="4">4 (Very High)</option>
+        </select>
+      </td>
+      <td id="total-score-profG">0</td>
       <td class="interactive">
         <select>
           <option value="">Select</option>
@@ -359,107 +406,107 @@
         </select>
       </td>
     </tr>
-      <tr>
-        <td>EcoHaven Properties</td>
-        <td>Sustainable and eco-friendly garden designs</td>
-        <td>Showcasing at industry conferences, high influence</td>
-        <td>Prefers BloomCraft for sustainable solutions</td>
-        <td>
-          <ul>
-            <li>Spring 2023: Major sustainable project with BloomCraft</li>
-            <li>Autumn 2022: Medium-sized project with Home and Harvest</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li>Total Budget: $30,000</li>
-            <li>Spending with BloomCraft: $7,500</li>
-            <li>Spending with Competitors: $5,000</li>
-          </ul>
-        </td>
-        <td>Showcase more projects, expand sustainable designs</td>
-        <td>
-          <select id="budget-ecohaven">
-            <option value="0">Select</option>
-            <option value="1">1 ($0-$10,000)</option>
-            <option value="2">2 ($10,001-$20,000)</option>
-            <option value="3">3 ($20,001-$30,000)</option>
-            <option value="4">4 ($30,001+)</option>
-          </select>
-        </td>
-        <td>
-          <select id="engagement-ecohaven">
-            <option value="0">Select</option>
-            <option value="1">1 (Low)</option>
-            <option value="2">2 (Medium)</option>
-            <option value="3">3 (High)</option>
-            <option value="4">4 (Very High)</option>
-          </select>
-        </td>
-        <td>
-          <select id="history-ecohaven">
-            <option value="0">Select</option>
-            <option value="1">1 (Minor projects)</option>
-            <option value="2">2 (Moderate projects)</option>
-            <option value="3">3 (Major projects)</option>
-            <option value="4">4 (Significant strategic projects)</option>
-          </select>
-        </td>
-        <td>
-          <select id="growth-ecohaven">
-            <option value="0">Select</option>
-            <option value="1">1 (Low)</option>
-            <option value="2">2 (Medium)</option>
-            <option value="3">3 (High)</option>
-            <option value="4">4 (Very High)</option>
-          </select>
-        </td>
-        <td>
-          <select id="alignment-ecohaven">
-            <option value="0">Select</option>
-            <option value="1">1 (Low)</option>
-            <option value="2">2 (Medium)</option>
-            <option value="3">3 (High)</option>
-            <option value="4">4 (Very High)</option>
-          </select>
-        </td>
-        <td id="total-score-ecohaven">0</td>
-        <td class="interactive">
-          <select>
-            <option value="">Select</option>
-            <option value="Seedling">Seedling</option>
-            <option value="Sprout">Sprout</option>
-            <option value="Budding">Budding</option>
-            <option value="Blooming">Blooming</option>
-            <option value="Blossoming">Blossoming</option>
-            <option value="Thriving">Thriving</option>
-            <option value="Flourishing">Flourishing</option>
-          </select>
-        </td>
-        <td class="interactive">
-          <select>
-            <option value="">Select</option>
-            <option value="Perennial Planter">Perennial Planter</option>
-            <option value="All-in-One Gardener">All-in-One Gardener</option>
-            <option value="Simple Sower">Simple Sower</option>
-            <option value="Adventure Gardener">Adventure Gardener</option>
-          </select>
-        </td>
-        <td class="interactive">
-          <select>
-            <option value="">Select</option>
-            <option value="A1">A1</option>
-            <option value="A2">A2</option>
-            <option value="A3">A3</option>
-            <option value="B1">B1</option>
-            <option value="B2">B2</option>
-            <option value="B3">B3</option>
-            <option value="C1">C1</option>
-            <option value="C2">C2</option>
-            <option value="C3">C3</option>
-          </select>
-        </td>
-      </tr>
+    <tr>
+      <td>EcoHaven Properties</td>
+      <td>Sustainable and eco-friendly garden designs</td>
+      <td>Showcasing at industry conferences, high influence</td>
+      <td>Prefers BloomCraft for sustainable solutions</td>
+      <td>
+        <ul>
+          <li>Spring 2023: Major sustainable project with BloomCraft</li>
+          <li>Autumn 2022: Medium-sized project with Home and Harvest</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Total Budget: $30,000</li>
+          <li>Spending with BloomCraft: $7,500</li>
+          <li>Spending with Competitors: $5,000</li>
+        </ul>
+      </td>
+      <td>Showcase more projects, expand sustainable designs</td>
+      <td>
+        <select id="budget-ecohaven">
+          <option value="0">Select</option>
+          <option value="1">1 ($0-$10,000)</option>
+          <option value="2">2 ($10,001-$20,000)</option>
+          <option value="3">3 ($20,001-$30,000)</option>
+          <option value="4">4 ($30,001+)</option>
+        </select>
+      </td>
+      <td>
+        <select id="engagement-ecohaven">
+          <option value="0">Select</option>
+          <option value="1">1 (Low)</option>
+          <option value="2">2 (Medium)</option>
+          <option value="3">3 (High)</option>
+          <option value="4">4 (Very High)</option>
+        </select>
+      </td>
+      <td>
+        <select id="history-ecohaven">
+          <option value="0">Select</option>
+          <option value="1">1 (Minor projects)</option>
+          <option value="2">2 (Moderate projects)</option>
+          <option value="3">3 (Major projects)</option>
+          <option value="4">4 (Significant strategic projects)</option>
+        </select>
+      </td>
+      <td>
+        <select id="growth-ecohaven">
+          <option value="0">Select</option>
+          <option value="1">1 (Low)</option>
+          <option value="2">2 (Medium)</option>
+          <option value="3">3 (High)</option>
+          <option value="4">4 (Very High)</option>
+        </select>
+      </td>
+      <td>
+        <select id="alignment-ecohaven">
+          <option value="0">Select</option>
+          <option value="1">1 (Low)</option>
+          <option value="2">2 (Medium)</option>
+          <option value="3">3 (High)</option>
+          <option value="4">4 (Very High)</option>
+        </select>
+      </td>
+      <td id="total-score-ecohaven">0</td>
+      <td class="interactive">
+        <select>
+          <option value="">Select</option>
+          <option value="Seedling">Seedling</option>
+          <option value="Sprout">Sprout</option>
+          <option value="Budding">Budding</option>
+          <option value="Blooming">Blooming</option>
+          <option value="Blossoming">Blossoming</option>
+          <option value="Thriving">Thriving</option>
+          <option value="Flourishing">Flourishing</option>
+        </select>
+      </td>
+      <td class="interactive">
+        <select>
+          <option value="">Select</option>
+          <option value="Perennial Planter">Perennial Planter</option>
+          <option value="All-in-One Gardener">All-in-One Gardener</option>
+          <option value="Simple Sower">Simple Sower</option>
+          <option value="Adventure Gardener">Adventure Gardener</option>
+        </select>
+      </td>
+      <td class="interactive">
+        <select>
+          <option value="">Select</option>
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="A3">A3</option>
+          <option value="B1">B1</option>
+          <option value="B2">B2</option>
+          <option value="B3">B3</option>
+          <option value="C1">C1</option>
+          <option value="C2">C2</option>
+          <option value="C3">C3</option>
+        </select>
+      </td>
+    </tr>
     <tr>
       <td>The Paediatric Patch</td>
       <td>Educational as well as healing garden spaces</td>
