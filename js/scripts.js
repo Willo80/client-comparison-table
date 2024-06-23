@@ -1,33 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const criteria = ['budget', 'engagement', 'history', 'growth', 'alignment'];
+    const clients = ['ecohaven', 'profG', 'sunny', 'flora', 'whims', 'blossom', 'wellness', 'paed', 'petunia', 'comms',]; // Add all client IDs here
   
-    criteria.forEach(criterion => {
-      const selectElement = document.getElementById(`${criterion}-ecohaven`);
-      selectElement.addEventListener('change', calculateTotalScore);
+    clients.forEach(client => {
+      const criteria = ['budget', 'engagement', 'history', 'growth', 'alignment'];
+      
+      criteria.forEach(criterion => {
+        const selectElement = document.getElementById(`${criterion}-${client}`);
+        selectElement.addEventListener('change', () => calculateTotalScore(client));
+      });
     });
   
-    function calculateTotalScore() {
+    function calculateTotalScore(client) {
       let totalScore = 0;
+      const criteriaWeights = {
+        'budget': 0.3,
+        'engagement': 0.3,
+        'history': 0.2,
+        'growth': 0.1,
+        'alignment': 0.1
+      };
   
-      criteria.forEach(criterion => {
-        const selectElement = document.getElementById(`${criterion}-ecohaven`);
+      Object.keys(criteriaWeights).forEach(criterion => {
+        const selectElement = document.getElementById(`${criterion}-${client}`);
         const value = parseFloat(selectElement.value);
-        switch (criterion) {
-          case 'budget':
-          case 'engagement':
-            totalScore += value * 0.3;
-            break;
-          case 'history':
-            totalScore += value * 0.2;
-            break;
-          case 'growth':
-          case 'alignment':
-            totalScore += value * 0.1;
-            break;
-        }
+        totalScore += value * criteriaWeights[criterion];
       });
   
-      document.getElementById('total-score-ecohaven').textContent = totalScore.toFixed(1);
+      document.getElementById(`total-score-${client}`).textContent = totalScore.toFixed(1);
     }
   });
   
