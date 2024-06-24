@@ -8,8 +8,8 @@
 
   <div class="navbar">
     <ul>
-      <li><a href="#instructions">Instructions</a></li>
-      <li><a href="#help">Magic Matt's Help</a></li>
+      <li><a href="#instructions" onclick="showSection('instructions')">Instructions</a></li>
+      <li><a href="#help" onclick="showSection('help')">Magic Matt's Help</a></li>
     </ul>
   </div>
 
@@ -26,9 +26,10 @@
       <li><strong>Engagement Level:</strong> Look at Client Behaviours and Engagement Level to determine how actively the client engages with BloomCraft.</li>
       <li><strong>Project History:</strong> Review the Project History section to understand the size and impact of past projects.</li>
       <li><strong>Potential for Growth:</strong> Check Future Goals and Strategic Alignment to evaluate potential growth.</li>
-      <li><strong>Strategic Alignment:</strong> Assess how well the client's goals align with BloomCrafts strategic initiatives, based on Current Needs and Future Goals.</li>
+      <li><strong>Strategic Alignment:</strong> Assess how well the client's goals align with BloomCraft’s strategic initiatives, based on Current Needs and Future Goals.</li>
     </ul>
   </div>
+
 
   <table>
     <tr>
@@ -978,5 +979,18 @@
   </table>
 
   <script src="js/scripts.js"></script>
+  <script>
+    function showSection(sectionId) {
+      document.getElementById('instructions').style.display = 'none';
+      document.getElementById('help').style.display = 'none';
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    // Initially hide both sections
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('instructions').style.display = 'none';
+      document.getElementById('help').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
