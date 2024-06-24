@@ -1,9 +1,37 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f8e8ca;
-    color: #333;
-  }
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f8e8ca;
+  color: #333;
+}
+
+.navbar {
+  background-color: #071e4a;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #6C8E5E;
+}
   
   table {
     width: 100%;
