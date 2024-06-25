@@ -5,67 +5,83 @@ body {
   color: #333;
 }
 
-.navbar {
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 400px; /* Adjust as needed */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #f2f0e9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
   background-color: #071e4a;
-  overflow: hidden;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.instructions {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  background-color: #071e4a;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav {
   margin-bottom: 20px;
 }
 
-.navbar ul {
+nav button {
+  background-color: #071e4a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+nav button:hover {
+  background-color: #4CAF50;
+}
+
+#definitions, #instructions, #help {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#definitions h2, #instructions h2, #help h2 {
+  margin-top: 0;
+}
+
+#definitions ul, #instructions ul, #help ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  padding-left: 0;
 }
 
-.navbar li {
-  float: left;
+#definitions ul li, #instructions ul li, #help ul li {
+  margin-bottom: 10px;
 }
-
-.navbar li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.navbar li a:hover {
-  background-color: #6C8E5E;
-}
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: #f2f0e9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #071e4a;
-    color: #fff;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .instructions, .help {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none; /* Hide by default */
-  }
   
