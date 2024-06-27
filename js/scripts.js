@@ -23,8 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     criteria.forEach(criterion => {
       const selectElement = document.getElementById(`${criterion}-${client}`);
-      selectElement.addEventListener('change', () => calculateTotalScore(client));
+      // Load saved value from local storage if available
+      const savedValue = localStorage.getItem(`${criterion}-${client}`);
+      if (savedValue) {
+        selectElement.value = savedValue;
+      }
+      selectElement.addEventListener('change', () => {
+        // Save the selected value to local storage
+        localStorage.setItem(`${criterion}-${client}`, selectElement.value);
+        calculateTotalScore(client);
+      });
     });
+    calculateTotalScore(client); // Calculate initial scores based on saved values
   });
 
   function calculateTotalScore(client) {
@@ -41,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
       totalScore += value * criteriaWeights[criterion];
     });
 
-    document.getElementById(`total-score-${client}`).textContent = totalScore.toFixed(1);
+    const totalScoreElement = document.getElementById(`total-score-${client}`);
+    totalScoreElement.textContent = totalScore.toFixed(1);
+    localStorage.setItem(`total-score-${client}`, totalScore.toFixed(1));
   }
 });
