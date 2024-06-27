@@ -19,9 +19,14 @@ th, td {
   text-align: left;
 }
 
-th {
+thead th {
+  position: sticky;
+  top: 0;
   background-color: #071E4A;
   color: #fff;
+  z-index: 1;
+  text-align: left;
+  padding: 10px;
 }
 
 tr:nth-child(even) {
@@ -43,14 +48,6 @@ tr:hover {
   color: #F8E8CA;
   padding: 10px;
   border-radius: 5px;
-}
-
-.tab {
-  display: none;
-  padding: 10px;
-  border: 1px solid #071E4A;
-  border-top: none;
-  background-color: #F8E8CA;
 }
 
 .navbar {
@@ -77,20 +74,19 @@ tr:hover {
   display: block;
 }
 
+.tab {
+  display: none;
+  padding: 10px;
+  border: 1px solid #071E4A;
+  border-top: none;
+  background-color: #F8E8CA;
+}
+
 .table-container {
   width: 100%;
   overflow-x: auto;
   overflow-y: auto;
   max-height: 400px;
-}
-
-thead th {
-  position: sticky;
-  top: 0;
-  background-color: #071E4A;
-  z-index: 1;
-  text-align: left;
-  padding: 10px;
 }
 
 .tooltip {
