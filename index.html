@@ -8,70 +8,41 @@
   <div class="instructions">
     <p>Use this table to compare client information, tally points, and fill in the blanks for "Adoption Stage," "Customer Segmentation," and "9-Box Grid." You can refer to this table during the activities and throughout the course.</p>
   </div>
-
-  <nav>
-    <button onclick="toggleInstructions()">Instructions</button>
-    <button onclick="toggleHelp()">Matt's Help</button>
-    <button onclick="toggleDefinitions()">Definitions for Each Criterion</button>
-  </nav>
-
-  <div id="instructions" style="display:none;">
-    <h2>Instructions</h2>
-    <p>Use this table to compare client information, tally points, and fill in the blanks for "Adoption Stage," "Segment," and "9-Box Grid." You can refer to this table during the activities and throughout the course.</p>
+  <div class="nav-tabs">
+    <button class="tab-button" onclick="showTab('instructions')">Instructions</button>
+    <button class="tab-button" onclick="showTab('matt-help')">Matt's Help</button>
+    <button class="tab-button" onclick="showTab('definitions-criterion')">Definitions for Each Criterion</button>
   </div>
 
-  <div id="help" style="display:none;">
-    <h2>Matt's Help</h2>
-    <p>Need assistance? Use these tips to guide you:</p>
-    <ul>
-      <li><strong>Budget:</strong> Refer to the Detailed Financials section to assess the client's total budget.</li>
-      <li><strong>Engagement Level:</strong> Look at Client Behaviours and Engagement Level to determine how actively the client engages with BloomCraft.</li>
-      <li><strong>Project History:</strong> Review the Project History section to understand the size and impact of past projects.</li>
-      <li><strong>Potential for Growth:</strong> Check Future Goals and Strategic Alignment to evaluate potential growth.</li>
-      <li><strong>Strategic Alignment:</strong> Assess how well the client's goals align with BloomCraft’s strategic initiatives, based on Current Needs and Future Goals.</li>
-    </ul>
-
+  <div id="instructions" class="tab-content" style="display:none;">
+    <p>Instructions content goes here...</p>
   </div>
 
-  <div id="definitions" style="display:none;">
+  <div id="matt-help" class="tab-content" style="display:none;">
+    <p>Matt's help content goes here...</p>
+  </div>
+
+  <div id="definitions-criterion" class="tab-content" style="display:none;">
     <h2>Definitions for Each Criterion</h2>
-    <ul>
-      <li><strong>Budget:</strong> The client's total budget allocated for garden design projects.
-        <ul>
-          <li>Indicators: Explicitly stated in the "Detailed Financials" section of the client profile.</li>
-          <li>Scoring: $0-$10,000 (1), $10,001-$20,000 (2), $20,001-$30,000 (3), $30,001+ (4)</li>
-        </ul>
-      </li>
-      <li><strong>Engagement Level:</strong> The level of interaction and collaboration between the client and BloomCraft.
-        <ul>
-          <li>Indicators: "Client Behaviours" and "Engagement Level" sections in the profile indicate if the engagement is low, medium, or high.</li>
-          <li>Scoring: Low (1), Medium (2), High (3), Very High (4)</li>
-        </ul>
-      </li>
-      <li><strong>Project History:</strong> The scope and significance of past projects completed with BloomCraft.
-        <ul>
-          <li>Indicators: "Project History" section details the size and impact of projects, determining if they are minor, moderate, major, or significant strategic projects.</li>
-          <li>Scoring: Minor projects (1), Moderate projects (2), Major projects (3), Significant strategic projects (4)</li>
-        </ul>
-      </li>
-      <li><strong>Potential for Growth:</strong> The client’s readiness and potential for future expansion and project involvement.
-        <ul>
-          <li>Indicators: "Future Goals" section indicates whether the client's growth potential is low, medium, or high.</li>
-          <li>Scoring: Low (1), Medium (2), High (3), Very High (4)</li>
-        </ul>
-      </li>
-      <li><strong>Strategic Alignment:</strong> The extent to which the client's goals and values align with BloomCraft’s strategic objectives.
-        <ul>
-          <li>Indicators: Found in the "Competitive Landscape" and "Future Goals" sections, stating how closely the client's goals match BloomCraft’s sustainability initiatives, innovation alignment, etc.</li>
-          <li>Scoring: Low (1), Medium (2), High (3), Very High (4)</li>
-        </ul>
-      </li>
-      <li><strong>Total Score:</strong> A composite score calculated from the weighted values of the above criteria, determining the client's placement on the 9-Box Grid.
-        <ul>
-          <li>Calculation: The total score is automatically calculated by combining the weighted scores of budget, engagement level, project history, potential for growth, and strategic alignment.</li>
-        </ul>
-      </li>
-    </ul>
+    <p>
+        <strong>Budget:</strong> The client's total budget allocated for garden design projects.
+        <br>Indicators: Explicitly stated in the "Detailed Financials" section of the client profile.
+        <br>Scoring: $0-$10,000 (1), $10,001-$20,000 (2), $20,001-$30,000 (3), $30,001+ (4)
+    </p>
+    <p>
+        <strong>Project History:</strong> The scope and significance of past projects completed with BloomCraft.
+        <br>Indicators: "Project History" section details the size and impact of projects, determining if they are minor, moderate, major, or significant strategic projects.
+        <br>Scoring: Minor projects (1), Moderate projects (2), Major projects (3), Significant strategic projects (4)
+    </p>
+    <p>
+        <strong>Potential for Growth:</strong> The client’s readiness and potential for future expansion and project involvement.
+        <br>Indicators: "Future Goals" section indicates whether the client's growth potential is low, medium, high, or very high.
+        <br>Scoring: Low (1), Medium (2), High (3), Very High (4)
+    </p>
+    <p>
+        <strong>Total Score:</strong> A composite score calculated from the weighted values of the above criteria, determining the client's placement on the 9-Box Grid.
+        <br>Calculation: The total score is automatically calculated by combining the weighted scores of budget, project history, and potential for growth.
+    </p>
   </div>
 
   <table>
@@ -83,11 +54,9 @@
       <th>Project History</th>
       <th>Detailed Financials</th>
       <th>Future Goals</th>
-      <th>Budget (30%)</th>
-      <th>Engagement Level (30%)</th>
-      <th>Project History (20%)</th>
-      <th>Potential for Growth (10%)</th>
-      <th>Strategic Alignment (10%)</th>
+      <th>Budget (40%)</th>
+      <th>Project History (30%)</th>
+      <th>Potential Growth (30%)</th>
       <th>Total Score</th>
       <th class="interactive">9-Box Grid</th>
       <th class="interactive">Customer Segmentation</th>
@@ -102,7 +71,6 @@
         <ul>
           <li>Spring 2023: Major research project with BloomCraft (Major Project)</li>
           <li>Autumn 2022: Small project with Home and Harvest (Minor Project)</li>
-          <li>Summer 2021: Medium-sized project with Gardens Galore (Moderate Project)</li>
         </ul>
       </td>
       <td>
@@ -123,15 +91,6 @@
         </select>
       </td>
       <td>
-        <select id="engagement-profG">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
         <select id="history-profG">
           <option value="0">Select</option>
           <option value="1">1 (Minor projects)</option>
@@ -142,15 +101,6 @@
       </td>
       <td>
         <select id="growth-profG">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-profG">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -204,7 +154,6 @@
         <ul>
           <li>Spring 2023: Garden cafe installation with BloomCraft (Major Project)</li>
           <li>Summer 2021: Seasonal display with Gardens Galore (Moderate Project)</li>
-          <li>Autumn 2020: Small edible garden with Home and Harvest (Minor Project)</li>
         </ul>
       </td>
       <td>
@@ -225,15 +174,6 @@
         </select>
       </td>
       <td>
-        <select id="engagement-flora">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
         <select id="history-flora">
           <option value="0">Select</option>
           <option value="1">1 (Minor projects)</option>
@@ -244,15 +184,6 @@
       </td>
       <td>
         <select id="growth-flora">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-flora">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -299,13 +230,14 @@
     </tr>
     <tr>
       <td>Community Greens Market</td>
-      <td>Accessible and community-focused garden solutions</td>
-      <td>Balancing practicality with community engagement</td>
+      <td>Community-focused garden designs that are practical and functional</td>
+      <td>Engaged in community-driven projects.</td>
       <td>Competitive landscape balanced between BloomCraft and other vendors</td>
       <td>
         <ul>
-          <li>Spring 2023: Community garden project with BloomCraft</li>
-          <li>Autumn 2022: Small community-focused project with Home and Harvest</li>
+          <li>Spring 2023: Community garden project with BloomCraft (Moderate)</li>
+          <li>Autumn 2022: Small community-focused project with Home and Harvest (Minor)</li>
+          <li>Summer 2021: Community event with Gardens Galore (Minor)</li>
         </ul>
       </td>
       <td>
@@ -315,7 +247,7 @@
           <li>Spending with Competitors: $9,000</li>
         </ul>
       </td>
-      <td>Expand community involvement, add educational programs</td>
+      <td>Expand community involvement, develop new projects.</td>
       <td>
         <select id="budget-community">
           <option value="0">Select</option>
@@ -323,15 +255,6 @@
           <option value="2">2 ($10,001-$20,000)</option>
           <option value="3">3 ($20,001-$30,000)</option>
           <option value="4">4 ($30,001+)</option>
-        </select>
-      </td>
-      <td>
-        <select id="engagement-community">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
         </select>
       </td>
       <td>
@@ -345,15 +268,6 @@
       </td>
       <td>
         <select id="growth-community">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-community">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -400,8 +314,8 @@
     </tr>
     <tr>
       <td>The Wellness Waterlilies</td>
-      <td>Tranquil and therapeutic garden designs and influences branches</td>
-      <td>Strong focus on unique features, and actively experimenting with new designs</td>
+      <td>Tranquil and therapeutic garden designs.</td>
+      <td>Strong focus on unique features, influencing their other branches.</td>
       <td>Prefers BloomCraft for unique designs</td>
       <td>
         <ul>
@@ -428,15 +342,6 @@
         </select>
       </td>
       <td>
-        <select id="engagement-wellness">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
         <select id="history-wellness">
           <option value="0">Select</option>
           <option value="1">1 (Minor projects)</option>
@@ -447,15 +352,6 @@
       </td>
       <td>
         <select id="growth-wellness">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-wellness">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -507,8 +403,8 @@
       <td>Balanced among competitors, high preference for creativity</td>
       <td>
         <ul>
-          <li>Summer 2023: Decorative plant displays by BloomCraft</li>
-          <li>Summer 2021: Window display with Gardens Galore</li>
+          <li>Summer 2023: Decorative plant displays by BloomCraft (Moderate)</li>
+          <li>Summer 2021: Window display with Gardens Galore (Moderate)</li>
         </ul>
       </td>
       <td>
@@ -529,15 +425,6 @@
         </select>
       </td>
       <td>
-        <select id="engagement-blossom">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
         <select id="history-blossom">
           <option value="0">Select</option>
           <option value="1">1 (Minor projects)</option>
@@ -548,15 +435,6 @@
       </td>
       <td>
         <select id="growth-blossom">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-blossom">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -608,8 +486,8 @@
       <td>Prefers Home and Harvest for exotic plant collections</td>
       <td>
         <ul>
-          <li>Spring 2023: Rare plant displays with BloomCraft</li>
-          <li>Autumn 2022: Small project with Home and Harvest</li>
+          <li>Spring 2023: Rare plant displays with BloomCraft (Moderate)</li>
+          <li>Autumn 2022: Small project with Home and Harvest (Minor)</li>
         </ul>
       </td>
       <td>
@@ -630,15 +508,6 @@
         </select>
       </td>
       <td>
-        <select id="engagement-petunia">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
         <select id="history-petunia">
           <option value="0">Select</option>
           <option value="1">1 (Minor projects)</option>
@@ -649,15 +518,6 @@
       </td>
       <td>
         <select id="growth-petunia">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-petunia">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -710,8 +570,8 @@
       <td>Prefers BloomCraft for sustainable solutions</td>
       <td>
         <ul>
-          <li>Spring 2023: Major sustainable project with BloomCraft</li>
-          <li>Autumn 2022: Medium-sized project with Home and Harvest</li>
+          <li>Spring 2023: Major sustainable project with BloomCraft (Significant)</li>
+          <li>Autumn 2022: Medium-sized project with Home and Harvest (Moderate)</li>
         </ul>
       </td>
       <td>
@@ -732,15 +592,6 @@
         </select>
       </td>
       <td>
-        <select id="engagement-ecohaven">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
         <select id="history-ecohaven">
           <option value="0">Select</option>
           <option value="1">1 (Minor projects)</option>
@@ -751,15 +602,6 @@
       </td>
       <td>
         <select id="growth-ecohaven">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-ecohaven">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -811,8 +653,8 @@
       <td>Prefers BloomCraft for innovative therapeutic gardens</td>
       <td>
         <ul>
-          <li>Spring 2023: Therapeutic garden installation with BloomCraft</li>
-          <li>Winter 2022: Small project with Home and Harvest</li>
+          <li>Spring 2023: Therapeutic garden installation with BloomCraft (Significant)</li>
+          <li>Winter 2022: Small project with Home and Harvest (Minor)</li>
         </ul>
       </td>
       <td>
@@ -833,15 +675,6 @@
         </select>
       </td>
       <td>
-        <select id="engagement-paed">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
         <select id="history-paed">
           <option value="0">Select</option>
           <option value="1">1 (Minor projects)</option>
@@ -852,15 +685,6 @@
       </td>
       <td>
         <select id="growth-paed">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-paed">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -913,8 +737,8 @@
       <td>Prefers BloomCraft for comprehensive designs</td>
       <td>
         <ul>
-          <li>Spring 2023: Accessible garden installation with BloomCraft</li>
-          <li>Autumn 2022: Raised garden beds garden with Home and Harvest</li>
+          <li>Spring 2023: Accessible garden installation with BloomCraft (Moderate)</li>
+          <li>Autumn 2022: Raised garden beds garden with Home and Harvest (Moderate)</li>
         </ul>
       </td>
       <td>
@@ -935,15 +759,6 @@
         </select>
       </td>
       <td>
-        <select id="engagement-sunny">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
         <select id="history-sunny">
           <option value="0">Select</option>
           <option value="1">1 (Minor projects)</option>
@@ -954,15 +769,6 @@
       </td>
       <td>
         <select id="growth-sunny">
-          <option value="0">Select</option>
-          <option value="1">1 (Low)</option>
-          <option value="2">2 (Medium)</option>
-          <option value="3">3 (High)</option>
-          <option value="4">4 (Very High)</option>
-        </select>
-      </td>
-      <td>
-        <select id="alignment-sunny">
           <option value="0">Select</option>
           <option value="1">1 (Low)</option>
           <option value="2">2 (Medium)</option>
@@ -1010,39 +816,24 @@
     </tr>
     <tr>
       <td>The Whimsical Weed Whackers</td>
-      <td>
-        <ul>
-        <li>Needs innovative and whimsical garden designs to attract customers.</li>
-        <li>Prefers seasonal updates with unique plant varieties.</li>
-      </ul>
-    </td>
-      <td> 
-        <ul>
-        <li>Experimenting with various vendors to create unique designs.</li>
-        <li>High engagement with BloomCraft for innovative projects.</li>
-      </ul>
-    </td>
+      <td>Creative and playful garden spaces, focusing on unique and whimsical designs</td>
+      <td>Experimenting with various vendors to create unique designs</td>
       <td>Prefers BloomCraft for creative projects</td>
       <td>
-        <ul>
-          <li>Spring 2023: Creation of a whimsical fairy garden by BloomCraft (Moderate project).</li>
-          <li>Autumn 2022: Creation of themed garden sections by Home and Harvest (Moderate project).</li>
-          <li>Summer 2021: Seasonal updates with unique plant varieties by Gardens Galore (Minor project).</li>
-        </ul>
+          <ul>
+              <li>Spring 2023: Creation of a whimsical fairy garden by BloomCraft (Moderate)</li>
+              <li>Autumn 2022: Creation of themed garden sections by Home and Harvest (Moderate)</li>
+              <li>Summer 2021: Seasonal updates with unique plant varieties by Gardens Galore (Minor)</li>
+          </ul>
       </td>
       <td>
-        <ul>
-          <li>Total Budget: $18,000</li>
-          <li>Spending with BloomCraft: $7,000</li>
-          <li>Spending with Competitors: $9,000</li>
-        </ul>
+          <ul>
+              <li>Total Budget: $12,000</li>
+              <li>Spending with BloomCraft: $7,000</li>
+              <li>Spending with Competitors: $9,000</li>
+          </ul>
       </td>
-      <td>
-        <ul>
-        <li>Continue creative projects.</li>
-        <li>Enhance uniqueness of garden spaces.</li>
-      </ul>
-    </td>
+      <td>Continue creative projects, develop unique designs</td>
       <td>
         <select id="budget-whims">
           <option value="0">Select</option>
@@ -1128,33 +919,5 @@
   </table>
 
   <script src="js/scripts.js"></script>
-  <script>
-    function toggleDefinitions() {
-      var x = document.getElementById("definitions");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-
-    function toggleInstructions() {
-      var x = document.getElementById("instructions");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-
-    function toggleHelp() {
-      var x = document.getElementById("help");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-  </script>
 </body>
 </html>
