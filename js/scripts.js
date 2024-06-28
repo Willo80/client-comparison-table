@@ -17,10 +17,10 @@ function showTab(tabId) {
 
 document.addEventListener('DOMContentLoaded', function() {
   const clients = ['ecohaven', 'profG', 'sunny', 'flora', 'whims', 'blossom', 'wellness', 'paed', 'petunia', 'comms']; // Add all client IDs here
+  const criteria = ['budget', 'history', 'growth'];
+  const additionalDropdowns = ['9-box', 'segment', 'adoption'];
 
   clients.forEach(client => {
-    const criteria = ['budget', 'history', 'growth'];
-    
     criteria.forEach(criterion => {
       const selectElement = document.getElementById(`${criterion}-${client}`);
       // Load saved value from local storage if available
@@ -34,6 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
         calculateTotalScore(client);
       });
     });
+    
+    additionalDropdowns.forEach(dropdown => {
+      const selectElement = document.getElementById(`${dropdown}-${client}`);
+      // Load saved value from local storage if available
+      const savedValue = localStorage.getItem(`${dropdown}-${client}`);
+      if (savedValue) {
+        selectElement.value = savedValue;
+      }
+      selectElement.addEventListener('change', () => {
+        // Save the selected value to local storage
+        localStorage.setItem(`${dropdown}-${client}`, selectElement.value);
+      });
+    });
+
     calculateTotalScore(client); // Calculate initial scores based on saved values
   });
 
