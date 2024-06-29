@@ -14,7 +14,17 @@ function showHelp(topic) {
           <li><strong>Flourishing:</strong> Frequently providing positive feedback, influencing others, promoting BloomCraft.</li>
         </ul>`;
       break;
-    // Add more cases if needed
+      case 'segmentation':
+        helpContent = `
+          <h3>Customer Segmentation Categories</h3>
+          <ul>
+            <li><strong>Perennial Planter:</strong> Clients focused on outcomes, requiring thorough and dependable solutions.</li>
+            <li><strong>All-in-One Gardener:</strong> Clients needing comprehensive, all-encompassing gardening services.</li>
+            <li><strong>Simple Sower:</strong> Clients preferring straightforward, low-maintenance garden solutions.</li>
+            <li><strong>Adventure Gardener:</strong> Clients seeking unique, experience-driven garden designs.</li>
+          </ul>`;
+        break;
+      // Add more cases if needed
   }
   // Display the help content in a modal or tooltip
   document.getElementById('help-modal-content').innerHTML = helpContent;
