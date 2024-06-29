@@ -24,7 +24,22 @@ function showHelp(topic) {
             <li><strong>Adventure Gardener:</strong> Clients seeking unique, experience-driven garden designs.</li>
           </ul>`;
         break;
-      // Add more cases if needed
+        case '9box':
+          helpContent = `
+            <h3>9-Box Grid Scoring</h3>
+            <ul>
+              <li><strong>A1:</strong> Score > 3.3</li>
+              <li><strong>A2:</strong> Score 3.0 - 3.3</li>
+              <li><strong>A3:</strong> Score 2.6 - 2.9</li>
+              <li><strong>B1:</strong> Score 2.0 - 2.5</li>
+              <li><strong>B2:</strong> Score 1.5 - 1.9</li>
+              <li><strong>B3:</strong> Score 1.0 - 1.4</li>
+              <li><strong>C1:</strong> Score 0.5 - 0.9</li>
+              <li><strong>C2:</strong> Score 0.1 - 0.4</li>
+              <li><strong>C3:</strong> Score <= 0.0</li>
+            </ul>`;
+          break;
+        // Add more cases if needed
   }
   // Display the help content in a modal or tooltip
   document.getElementById('help-modal-content').innerHTML = helpContent;
