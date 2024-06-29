@@ -72,20 +72,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
   clients.forEach(client => {
     const criteria = ['budget', 'history', 'growth'];
+    const selections = ['9-box', 'segment', 'adoption'];
     
+    // Handle criteria dropdowns
     criteria.forEach(criterion => {
       const selectElement = document.getElementById(`${criterion}-${client}`);
-      // Load saved value from local storage if available
       const savedValue = localStorage.getItem(`${criterion}-${client}`);
       if (savedValue) {
         selectElement.value = savedValue;
       }
       selectElement.addEventListener('change', () => {
-        // Save the selected value to local storage
         localStorage.setItem(`${criterion}-${client}`, selectElement.value);
         calculateTotalScore(client);
       });
     });
+    
+    // Handle other dropdowns
+    selections.forEach(selection => {
+      const selectElement = document.getElementById(`${selection}-${client}`);
+      const savedValue = localStorage.getItem(`${selection}-${client}`);
+      if (savedValue) {
+        selectElement.value = savedValue;
+      }
+      selectElement.addEventListener('change', () => {
+        localStorage.setItem(`${selection}-${client}`, selectElement.value);
+      });
+    });
+    
     calculateTotalScore(client); // Calculate initial scores based on saved values
   });
 
@@ -107,22 +120,4 @@ document.addEventListener('DOMContentLoaded', function() {
     totalScoreElement.textContent = totalScore.toFixed(1);
     localStorage.setItem(`total-score-${client}`, totalScore.toFixed(1));
   }
-
-  // Add event listeners to save the 9-Box Grid, Customer Segmentation, and Adoption Stage selections
-  clients.forEach(client => {
-    const selections = ['9-box', 'segment', 'adoption'];
-    
-    selections.forEach(selection => {
-      const selectElement = document.getElementById(`${selection}-${client}`);
-      // Load saved value from local storage if available
-      const savedValue = localStorage.getItem(`${selection}-${client}`);
-      if (savedValue) {
-        selectElement.value = savedValue;
-      }
-      selectElement.addEventListener('change', () => {
-        // Save the selected value to local storage
-        localStorage.setItem(`${selection}-${client}`, selectElement.value);
-      });
-    });
-  });
 });
