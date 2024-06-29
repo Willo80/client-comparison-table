@@ -1,3 +1,31 @@
+function showHelp(topic) {
+  let helpContent = '';
+  switch(topic) {
+    case 'adoption':
+      helpContent = `
+        <h3>Adoption Ladder Stages</h3>
+        <ul>
+          <li><strong>Seedling:</strong> Initial inquiries, first consultations.</li>
+          <li><strong>Sprout:</strong> Attending introductory workshops, requesting basic information.</li>
+          <li><strong>Budding:</strong> Actively planning garden projects, requesting quotes, making small purchases.</li>
+          <li><strong>Blooming:</strong> Implementing larger projects, ordering significant materials, experimenting with BloomCraft designs.</li>
+          <li><strong>Blossoming:</strong> Ongoing projects with regular updates, frequent discussions about innovative ideas.</li>
+          <li><strong>Thriving:</strong> Consistent collaboration with multiple ongoing projects, high engagement.</li>
+          <li><strong>Flourishing:</strong> Frequently providing positive feedback, influencing others, promoting BloomCraft.</li>
+        </ul>`;
+      break;
+    // Add more cases if needed
+  }
+  // Display the help content in a modal or tooltip
+  document.getElementById('help-modal-content').innerHTML = helpContent;
+  document.getElementById('help-modal').style.display = 'block';
+}
+
+// Hide the help modal
+function closeHelp() {
+  document.getElementById('help-modal').style.display = 'none';
+}
+
 function showTab(tabId) {
   var tab = document.getElementById(tabId);
   
@@ -17,10 +45,10 @@ function showTab(tabId) {
 
 document.addEventListener('DOMContentLoaded', function() {
   const clients = ['ecohaven', 'profG', 'sunny', 'flora', 'whims', 'blossom', 'wellness', 'paed', 'petunia', 'comms']; // Add all client IDs here
-  const criteria = ['budget', 'history', 'growth'];
-  const additionalDropdowns = ['9-box', 'segment', 'adoption'];
 
   clients.forEach(client => {
+    const criteria = ['budget', 'history', 'growth'];
+    
     criteria.forEach(criterion => {
       const selectElement = document.getElementById(`${criterion}-${client}`);
       // Load saved value from local storage if available
@@ -34,20 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
         calculateTotalScore(client);
       });
     });
-    
-    additionalDropdowns.forEach(dropdown => {
-      const selectElement = document.getElementById(`${dropdown}-${client}`);
-      // Load saved value from local storage if available
-      const savedValue = localStorage.getItem(`${dropdown}-${client}`);
-      if (savedValue) {
-        selectElement.value = savedValue;
-      }
-      selectElement.addEventListener('change', () => {
-        // Save the selected value to local storage
-        localStorage.setItem(`${dropdown}-${client}`, selectElement.value);
-      });
-    });
-
     calculateTotalScore(client); // Calculate initial scores based on saved values
   });
 
@@ -69,4 +83,22 @@ document.addEventListener('DOMContentLoaded', function() {
     totalScoreElement.textContent = totalScore.toFixed(1);
     localStorage.setItem(`total-score-${client}`, totalScore.toFixed(1));
   }
+
+  // Add event listeners to save the 9-Box Grid, Customer Segmentation, and Adoption Stage selections
+  clients.forEach(client => {
+    const selections = ['grid', 'segment', 'adoption'];
+    
+    selections.forEach(selection => {
+      const selectElement = document.getElementById(`${selection}-${client}`);
+      // Load saved value from local storage if available
+      const savedValue = localStorage.getItem(`${selection}-${client}`);
+      if (savedValue) {
+        selectElement.value = savedValue;
+      }
+      selectElement.addEventListener('change', () => {
+        // Save the selected value to local storage
+        localStorage.setItem(`${selection}-${client}`, selectElement.value);
+      });
+    });
+  });
 });

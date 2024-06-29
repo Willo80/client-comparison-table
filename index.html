@@ -3,6 +3,7 @@
 <head>
   <title>Client Comparison Table</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="instructions">
@@ -133,6 +134,11 @@
           <option value="4">4 (Very High)</option>
         </select>
       </td>
+      <!-- Help Modal -->
+<div id="help-modal" style="display:none;">
+  <div id="help-modal-content"></div>
+  <span id="help-modal-close" onclick="closeHelp()">Close</span>
+</div>
       <td id="total-score-profG">0</td>
       <td class="interactive">
         <select id="9-box-profG">
@@ -168,6 +174,7 @@
           <option value="Thriving">Thriving</option>
           <option value="Flourishing">Flourishing</option>
         </select>
+        <i class="fas fa-question-circle help-icon" onclick="showHelp('adoption')"></i>
       </td>
     </tr>
     <tr>
